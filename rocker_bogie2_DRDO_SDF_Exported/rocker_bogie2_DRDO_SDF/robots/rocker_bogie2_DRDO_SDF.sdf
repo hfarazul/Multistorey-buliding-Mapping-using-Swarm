@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version="1.5">
+  <model name="rocker bogie2_DRDO_SDF">
+    <pose>0 0 -0.13869282230156 0 0 0</pose>
+    <plugin name="clock" filename="libgz_clock.so">
+      <topic>/gazebo/frc/time</topic>
+    </plugin>
+    <link name="chassis">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.0140118069095409 9.23847384012855E-05 -0.0342752111820147 1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>1</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>7.23564922016932</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.0267731992504314</ixx>
+          <ixy>1.1816733131961E-05</ixy>
+          <ixz>6.51737973164661E-06</ixz>
+          <iyy>0.0657594624268071</iyy>
+          <iyz>0.00152478269391603</iyz>
+          <izz>0.0425271351984544</izz>
+        </inertia>
+      </inertial>
+      <collision name="chassis_collision">
+        <pose>-0.251463812959426 0.139884688288293 0.487643391866537 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/chassis_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="chassis_visual">
+        <pose>-0.251463812959426 0.139884688288293 0.487643391866537 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/chassis.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="bogie1">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.0409172398776575 -0.123907854058709 -0.0647888399637531 1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.285057110437176</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.000610157709332887</ixx>
+          <ixy>2.59133264369864E-10</ixy>
+          <ixz>4.18845558008104E-12</ixz>
+          <iyy>0.000492155340392241</iyy>
+          <iyz>8.78414871050554E-06</iyz>
+          <izz>0.000126413081570753</izz>
+        </inertia>
+      </inertial>
+      <collision name="bogie1_collision">
+        <pose>-0.127463574162316 0.170398317070031 0.432714345079339 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/bogie1_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="bogie1_visual">
+        <pose>-0.127463574162316 0.170398317070031 0.432714345079339 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/bogie1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="chassis-bogie1" type="revolute">
+      <parent>chassis</parent>
+      <child>bogie1</child>
+      <pose>3.05311331771918E-16 0.0169527314428986 -0.0004069248737536 0 0 0</pose>
+      <axis>
+        <xyz>-1 3.17748218654955E-23 -8.72563921430534E-22</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel1">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.155393720870805 -0.127216076578442 -0.105215080477974 1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.060861542237092</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301841E-05</ixx>
+          <ixy>9.36432818375433E-12</ixy>
+          <ixz>2.08425313969283E-11</ixz>
+          <iyy>3.32741103980399E-05</iyy>
+          <iyz>3.68044121642016E-11</iyz>
+          <izz>3.32742912435572E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel1_collision">
+        <pose>-0.124155351642582 0.210824557584252 0.629025305827801 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel1_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel1_visual">
+        <pose>-0.124155351642582 0.210824557584252 0.629025305827801 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="chassis-wheel1" type="revolute">
+      <parent>chassis</parent>
+      <child>wheel1</child>
+      <pose>-4.71844785465692E-16 4.91037790706361E-08 -1.82910182111584E-07 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel9">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.155802712342858 0.127400491269964 -0.104513255842009 1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0608615422370919</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301842E-05</ixx>
+          <ixy>1.66338033085389E-11</ixy>
+          <ixz>1.56658336396275E-11</ixz>
+          <iyy>3.32741629781162E-05</iyy>
+          <iyz>8.99931742889582E-11</iyz>
+          <izz>3.32742386634809E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel9_collision">
+        <pose>-0.378771919490989 0.210122732948287 0.629434297299854 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel9_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel9_visual">
+        <pose>-0.378771919490989 0.210122732948287 0.629434297299854 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel9.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="chassis-wheel9" type="revolute">
+      <parent>chassis</parent>
+      <child>wheel9</child>
+      <pose>1.66533453693773E-16 -1.15422100488427E-07 -1.50150106570379E-07 0 0 0</pose>
+      <axis>
+        <xyz>1 2.59222623785472E-32 -2.46519032881566E-32</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="bogie2">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.041231566226005 0.124092145986714 -0.0650006140522282 1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.285057103363605</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.000610157695027885</ixx>
+          <ixy>2.59610103879707E-10</ixy>
+          <ixz>9.06369839243088E-12</ixz>
+          <iyy>0.000491424184306855</iyy>
+          <iyz>1.85482244309763E-05</iyz>
+          <izz>0.000127144223081822</izz>
+        </inertia>
+      </inertial>
+      <collision name="bogie2_collision">
+        <pose>-0.375463574207739 0.170610091158506 0.432400018730991 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/bogie2_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="bogie2_visual">
+        <pose>-0.375463574207739 0.170610091158506 0.432400018730991 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/bogie2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="chassis-bogie2" type="revolute">
+      <parent>chassis</parent>
+      <child>bogie2</child>
+      <pose>3.33066907387547E-16 -0.032960598145846 0.0517383813311545 0 0 0</pose>
+      <axis>
+        <xyz>-1 -8.90326398945524E-16 -1.9400237768314E-16</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel3">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.00821530311568947 -0.143216076578442 -0.101520724455714 1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0608615422370921</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301842E-05</ixx>
+          <ixy>8.12714224724989E-12</ixy>
+          <ixz>2.13553580054377E-11</ixz>
+          <iyy>3.32741641080833E-05</iyy>
+          <iyz>9.04600274085331E-11</iyz>
+          <izz>3.3274237533514E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel3_collision">
+        <pose>-0.108155351642582 0.207130201561992 0.481846888072686 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel3_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel3_visual">
+        <pose>-0.108155351642582 0.207130201561992 0.481846888072686 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="bogie1-wheel3" type="revolute">
+      <parent>bogie1</parent>
+      <child>wheel3</child>
+      <pose>0 -9.46985707350745E-08 -1.6401065977556E-07 0 0 0</pose>
+      <axis>
+        <xyz>1 2.59222623785472E-32 -2.46519032881566E-32</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel6">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.09175590097026 -0.143216076578442 -0.0991210674791009 1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0608615422370919</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301841E-05</ixx>
+          <ixy>8.12714225663206E-12</ixy>
+          <ixz>2.13553580075757E-11</ixz>
+          <iyy>3.32741641080832E-05</iyy>
+          <iyz>9.04600273820191E-11</iyz>
+          <izz>3.32742375335139E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel6_collision">
+        <pose>-0.108155351642582 0.204730544585379 0.381875683986736 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel6_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel6_visual">
+        <pose>-0.108155351642582 0.204730544585379 0.381875683986736 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel6.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="bogie1-wheel6" type="revolute">
+      <parent>bogie1</parent>
+      <child>wheel6</child>
+      <pose>-4.30211422042248E-16 -9.46985708738524E-08 -1.6401065977556E-07 0 0 0</pose>
+      <axis>
+        <xyz>1 2.59222623785472E-32 -2.46519032881566E-32</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel7">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.00690127433442722 0.143400491269964 -0.103033470231298 1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0608615422370922</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301843E-05</ixx>
+          <ixy>1.99204164095533E-11</ixy>
+          <ixz>1.11927997869173E-11</ixz>
+          <iyy>3.32742832299952E-05</iyy>
+          <iyz>5.23408477721838E-11</iyz>
+          <izz>3.32741184116021E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel7_collision">
+        <pose>-0.394771919490989 0.208642947337576 0.480532859291423 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel7_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel7_visual">
+        <pose>-0.394771919490989 0.208642947337576 0.480532859291423 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel7.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="bogie2-wheel7" type="revolute">
+      <parent>bogie2</parent>
+      <child>wheel7</child>
+      <pose>2.77555756156289E-16 1.77779226617769E-07 -6.52829411085243E-08 0 3.67724559638775E-18 4.57213918705024</pose>
+      <axis>
+        <xyz>-0.139790459643666 0.990181108379983 -4.19128944852944E-18</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel8">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.0929700725395733 0.143400491269964 -0.0979610699071326 1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0608615422370917</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301841E-05</ixx>
+          <ixy>1.93504023673876E-11</ixy>
+          <ixz>1.2151694685492E-11</ixz>
+          <iyy>3.32741999752059E-05</iyy>
+          <iyz>9.76223590606315E-11</iyz>
+          <izz>3.32742016663912E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel8_collision">
+        <pose>-0.394771919490989 0.203570547013411 0.380661512417423 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel8_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel8_visual">
+        <pose>-0.394771919490989 0.203570547013411 0.380661512417423 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://rocker_bogie2_DRDO_SDF/meshes/wheel8.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="bogie2-wheel8" type="revolute">
+      <parent>bogie2</parent>
+      <child>wheel8</child>
+      <pose>2.22044604925031E-16 -1.42290941695933E-07 -1.24982413751695E-07 0 0 0</pose>
+      <axis>
+        <xyz>1 8.90326398945524E-16 1.9400237768314E-16</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+</sdf>
