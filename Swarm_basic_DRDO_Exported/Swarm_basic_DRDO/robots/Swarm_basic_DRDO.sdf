@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version="1.5">
+  <model name="Swarm_basic_DRDO">
+    <pose>0 0 0.194948911326115 0 0 0</pose>
+    <plugin name="clock" filename="libgz_clock.so">
+      <topic>/gazebo/frc/time</topic>
+    </plugin>
+    <link name="shaft_main">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>5.55111512312578E-17 0.0137594954851656 -2.77555756156289E-17 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>1</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.150747177427617</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.000956070289318914</ixx>
+          <ixy>2.20086496819479E-38</ixy>
+          <ixz>5.11101118690564E-20</ixz>
+          <iyy>0.000956070289318914</iyy>
+          <iyz>8.96900646737978E-37</iyz>
+          <izz>4.88106288311361E-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="shaft_main_collision">
+        <pose>0.267318242739839 -0.229294869921687 0.0830225714574978 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/shaft_main_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="shaft_main_visual">
+        <pose>0.267318242739839 -0.229294869921687 0.0830225714574978 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/shaft_main.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="rocker1">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.0142643962310737 0.1322 -0.0702102579274146 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.096396563929331</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.00019324560557376</ixx>
+          <ixy>0.00021045720756512</ixy>
+          <ixz>1.16767853591977E-19</ixz>
+          <iyy>0.000860690998185783</iyy>
+          <iyz>2.43358530040585E-19</iyz>
+          <izz>0.00105353495140984</izz>
+        </inertia>
+      </inertial>
+      <collision name="rocker1_collision">
+        <pose>0.253053846508766 -0.159084611994272 0.201463075972332 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/rocker1_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="rocker1_visual">
+        <pose>0.253053846508766 -0.159084611994272 0.201463075972332 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/rocker1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="shaft_main-rocker1" type="revolute">
+      <parent>shaft_main</parent>
+      <child>rocker1</child>
+      <pose>-0.0142643962310737 0.0702102579274146 5.55111512312578E-17 0 0 0</pose>
+      <axis>
+        <xyz>2.18547839493141E-16 0 -1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="rocker2">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.0142643962310742 -0.1322 -0.0702102579274139 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0963965639293307</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.000193245605573763</ixx>
+          <ixy>0.000210457207565121</ixy>
+          <ixz>2.35666408804773E-19</ixz>
+          <iyy>0.000860690998185782</iyy>
+          <iyz>7.30579791836892E-19</iyz>
+          <izz>0.00105353495140983</izz>
+        </inertia>
+      </inertial>
+      <collision name="rocker2_collision">
+        <pose>0.253053846508765 -0.159084611994273 -0.0629369240276679 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/rocker2_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="rocker2_visual">
+        <pose>0.253053846508765 -0.159084611994273 -0.0629369240276679 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/rocker2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="shaft_main-rocker2" type="revolute">
+      <parent>shaft_main</parent>
+      <child>rocker2</child>
+      <pose>-0.160425718828828 -0.0196862904983429 1.38777878078145E-17 0 0 0</pose>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="bogie1">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.146161322597755 0.1272 -0.126642449311268 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0641941015283157</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>3.25139585024769E-05</ixx>
+          <ixy>2.31716513589188E-18</ixy>
+          <ixz>5.35214914534586E-20</ixz>
+          <iyy>0.000319540421204775</iyy>
+          <iyz>4.72634688114488E-21</iyz>
+          <izz>0.000351786904284217</izz>
+        </inertia>
+      </inertial>
+      <collision name="bogie1_collision">
+        <pose>0.413479565337594 -0.102652420610419 0.196463075972332 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/bogie1_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="bogie1_visual">
+        <pose>0.413479565337594 -0.102652420610419 0.196463075972332 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/bogie1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rocker1-bogie1" type="revolute">
+      <parent>rocker1</parent>
+      <child>bogie1</child>
+      <pose>1.0547118733939E-15 0.0367459008855112 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel2">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.144337148638157 0.159700000001151 -0.144948911326114 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.101686078123104</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>8.16691726509939E-05</ixx>
+          <ixy>7.02258353187431E-21</ixy>
+          <ixz>1.25040144430925E-20</ixz>
+          <iyy>8.1669172650994E-05</iyy>
+          <iyz>2.85866137927098E-21</iyz>
+          <izz>0.000153833908959209</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel2_collision">
+        <pose>0.122981094101683 -0.0843459585955724 0.228963075973483 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel2_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel2_visual">
+        <pose>0.122981094101683 -0.0843459585955724 0.228963075973483 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rocker1-wheel2" type="revolute">
+      <parent>rocker1</parent>
+      <child>wheel2</child>
+      <pose>-0.196945936739175 0 2.77555756156289E-17 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="bogie2">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.146161322597754 -0.1272 -0.126642449311264 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0641941015283156</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>3.25139585024779E-05</ixx>
+          <ixy>2.48559433662698E-19</ixy>
+          <ixz>6.26010050662804E-20</ixz>
+          <iyy>0.000319540421204776</iyy>
+          <iyz>1.00297366194418E-19</iyz>
+          <izz>0.000351786904284217</izz>
+        </inertia>
+      </inertial>
+      <collision name="bogie2_collision">
+        <pose>0.413479565337593 -0.102652420610423 -0.057936924027668 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/bogie2_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="bogie2_visual">
+        <pose>0.413479565337593 -0.102652420610423 -0.057936924027668 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/bogie2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rocker2-bogie2" type="revolute">
+      <parent>rocker2</parent>
+      <child>bogie2</child>
+      <pose>1.11022302462516E-16 0.0367459008855071 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel3">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.144337148638157 -0.159699999998849 -0.144948911326115 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.101686078123104</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>8.16691726509941E-05</ixx>
+          <ixy>5.49313896543177E-21</ixy>
+          <ixz>1.08138722040024E-20</ixz>
+          <iyy>8.16691726509941E-05</iyy>
+          <iyz>6.69959751288794E-21</iyz>
+          <izz>0.000153833908959209</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel3_collision">
+        <pose>0.122981094101682 -0.0843459585955721 -0.090436924026517 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel3_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel3_visual">
+        <pose>0.122981094101682 -0.0843459585955721 -0.090436924026517 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rocker2-wheel3" type="revolute">
+      <parent>rocker2</parent>
+      <child>wheel3</child>
+      <pose>-4.16333634234434E-17 0 0 0 0 0</pose>
+      <axis>
+        <xyz>3.46944695195362E-16 0 1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel1">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.0526087881010184 0.159700000001151 -0.144948911326114 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.101686078123104</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>8.16691726509941E-05</ixx>
+          <ixy>5.74398714074344E-21</ixy>
+          <ixz>2.01856822019475E-20</ixz>
+          <iyy>8.16691726509941E-05</iyy>
+          <iyz>6.15858684804801E-21</iyz>
+          <izz>0.000153833908959209</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel1_collision">
+        <pose>0.319927030840858 -0.0843459585955724 0.228963075973483 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel1_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel1_visual">
+        <pose>0.319927030840858 -0.0843459585955724 0.228963075973483 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="bogie1-wheel1" type="revolute">
+      <parent>bogie1</parent>
+      <child>wheel1</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel6">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.23971385709449 0.159700000001151 -0.144948911326114 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.101686078123104</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>8.1669172650994E-05</ixx>
+          <ixy>2.31211680358844E-20</ixy>
+          <ixz>1.85358852160503E-20</ixz>
+          <iyy>8.1669172650994E-05</iyy>
+          <iyz>1.86704935489177E-21</iyz>
+          <izz>0.000153833908959209</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel6_collision">
+        <pose>0.507032099834329 -0.0843459585955726 0.228963075973483 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel6_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel6_visual">
+        <pose>0.507032099834329 -0.0843459585955726 0.228963075973483 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel6.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="bogie1-wheel6" type="revolute">
+      <parent>bogie1</parent>
+      <child>wheel6</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel4">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.0526087881010182 -0.159699999998849 -0.144948911326115 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.101686078123104</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>8.16691726509941E-05</ixx>
+          <ixy>1.95170381708853E-20</ixy>
+          <ixz>2.00404168177911E-20</ixz>
+          <iyy>8.1669172650994E-05</iyy>
+          <iyz>1.40267813958499E-21</iyz>
+          <izz>0.000153833908959209</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel4_collision">
+        <pose>0.319927030840857 -0.0843459585955721 -0.090436924026517 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel4_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel4_visual">
+        <pose>0.319927030840857 -0.0843459585955721 -0.090436924026517 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="bogie2-wheel4" type="revolute">
+      <parent>bogie2</parent>
+      <child>wheel4</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="wheel5">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.23971385709449 -0.159699999998849 -0.144948911326115 1.5707963267949 -3.52324806431357E-17 -1.19061722862878E-33</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.101686078123104</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>8.16691726509941E-05</ixx>
+          <ixy>1.64986619048666E-21</ixy>
+          <ixz>1.27305083617486E-20</ixz>
+          <iyy>8.16691726509941E-05</iyy>
+          <iyz>4.7867764000503E-20</iyz>
+          <izz>0.000153833908959209</izz>
+        </inertia>
+      </inertial>
+      <collision name="wheel5_collision">
+        <pose>0.507032099834329 -0.0843459585955721 -0.090436924026517 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel5_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="wheel5_visual">
+        <pose>0.507032099834329 -0.0843459585955721 -0.090436924026517 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_basic_DRDO/meshes/wheel5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="bogie2-wheel5" type="revolute">
+      <parent>bogie2</parent>
+      <child>wheel5</child>
+      <pose>0 -1.38777878078145E-17 0 0 0 0</pose>
+      <axis>
+        <xyz>0 -6.93889390390723E-16 1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="rocker1-wheel2_motor" filename="libgz_dc_motor.so">
+      <joint>rocker1-wheel2</joint>
+      <topic>/gazebo/frc/simulator/pwm/2</topic>
+      <multiplier>5</multiplier>
+    </plugin>
+    <plugin name="rocker2-wheel3_motor" filename="libgz_dc_motor.so">
+      <joint>rocker2-wheel3</joint>
+      <topic>/gazebo/frc/simulator/pwm/3</topic>
+      <multiplier>5</multiplier>
+    </plugin>
+    <plugin name="bogie1-wheel1_motor" filename="libgz_dc_motor.so">
+      <joint>bogie1-wheel1</joint>
+      <topic>/gazebo/frc/simulator/pwm/1</topic>
+      <multiplier>5</multiplier>
+    </plugin>
+    <plugin name="bogie1-wheel6_motor" filename="libgz_dc_motor.so">
+      <joint>bogie1-wheel6</joint>
+      <topic>/gazebo/frc/simulator/pwm/6</topic>
+      <multiplier>5</multiplier>
+    </plugin>
+    <plugin name="bogie2-wheel4_motor" filename="libgz_dc_motor.so">
+      <joint>bogie2-wheel4</joint>
+      <topic>/gazebo/frc/simulator/pwm/4</topic>
+      <multiplier>5</multiplier>
+    </plugin>
+    <plugin name="bogie2-wheel5_motor" filename="libgz_dc_motor.so">
+      <joint>bogie2-wheel5</joint>
+      <topic>/gazebo/frc/simulator/pwm/5</topic>
+      <multiplier>5</multiplier>
+    </plugin>
+  </model>
+</sdf>
