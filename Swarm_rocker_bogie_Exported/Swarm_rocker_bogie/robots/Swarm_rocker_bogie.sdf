@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version="1.5">
+  <model name="Swarm_rocker_bogie">
+    <pose>0 0 0.126373635434956 0 0 0</pose>
+    <plugin name="clock" filename="libgz_clock.so">
+      <topic>/gazebo/frc/time</topic>
+    </plugin>
+    <link name="b">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.0148104090723811 -0.00163168364829588 0.0199908082385083 -1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>1</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>7.2356492385504</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.0267670908195039</ixx>
+          <ixy>1.53659995127757E-05</ixy>
+          <ixz>8.55041313934179E-06</ixz>
+          <iyy>0.065736382702074</iyy>
+          <iyz>0.0015539855739102</iyz>
+          <izz>0.0425441069655975</izz>
+        </inertia>
+      </inertial>
+      <collision name="b_collision">
+        <pose>0.152453905827921 -0.0302156363033254 -2.14221795320658 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/b_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="b_visual">
+        <pose>0.152453905827921 -0.0302156363033254 -2.14221795320658 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/b.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="rocker1">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.0400993551230209 -0.125631922733185 0.0504696530971495 -1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.285057110437184</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.000610157709332902</ixx>
+          <ixy>2.59133264708521E-10</ixy>
+          <ixz>4.18845911356162E-12</ixz>
+          <iyy>0.000492155340392255</iyy>
+          <iyz>8.78414871051108E-06</iyz>
+          <izz>0.000126413081570755</izz>
+        </inertia>
+      </inertial>
+      <collision name="rocker1_collision">
+        <pose>0.276454144912809 0.0002632085553158 -2.19712771740198 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/rocker1_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="rocker1_visual">
+        <pose>0.276454144912809 0.0002632085553158 -2.19712771740198 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/rocker1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="b-rocker1" type="revolute">
+      <parent>b</parent>
+      <child>rocker1</child>
+      <pose>2.22044604925031E-16 0.0169527314428989 -0.000406924873752157 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="rocker2">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.0407351751930216 0.122368077312239 0.0501480848266612 -1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.285057103363602</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.00061015769502788</ixx>
+          <ixy>2.59610103472399E-10</ixy>
+          <ixz>9.06369873589311E-12</ixz>
+          <iyy>0.000491424184306851</iyy>
+          <iyz>1.85482244309908E-05</iyz>
+          <izz>0.00012714422308182</izz>
+        </inertia>
+      </inertial>
+      <collision name="rocker2_collision">
+        <pose>0.028454144867386 -5.83597151725061E-05 -2.19776353747198 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/rocker2_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="rocker2_visual">
+        <pose>0.028454144867386 -5.83597151725061E-05 -2.19776353747198 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/rocker2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="b-rocker2" type="revolute">
+      <parent>b</parent>
+      <child>rocker2</child>
+      <pose>2.77555756156289E-17 0.0169357874937826 -0.000860104389454719 0 0 0</pose>
+      <axis>
+        <xyz>1 8.67361737988403E-16 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="W3">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.00903318787032381 -0.144940145252918 0.0872015375891093 -1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0608615422370916</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301841E-05</ixx>
+          <ixy>8.12714228438774E-12</ixy>
+          <ixz>2.13553579959487E-11</ixz>
+          <iyy>3.32741641080832E-05</iyy>
+          <iyz>9.04600273464406E-11</iyz>
+          <izz>3.32742375335139E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="W3_collision">
+        <pose>0.295762367432542 0.0369950930472756 -2.14799517440863 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/W3_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="W3_visual">
+        <pose>0.295762367432542 0.0369950930472756 -2.14799517440863 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/W3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rocker1-W3" type="revolute">
+      <parent>rocker1</parent>
+      <child>W3</child>
+      <pose>3.33066907387547E-16 -9.46985707836467E-08 -1.64010659720049E-07 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="6">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.0909380162156253 -0.144940145252918 0.0848018806124958 -1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0608615422370905</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301837E-05</ixx>
+          <ixy>8.12714232985873E-12</ixy>
+          <ixz>2.13553579132461E-11</ixz>
+          <iyy>3.32741641080829E-05</iyy>
+          <iyz>9.04600271716098E-11</iyz>
+          <izz>3.32742375335137E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="6_collision">
+        <pose>0.295762367432542 0.0345954360706621 -2.24796637849458 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/6_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="6_visual">
+        <pose>0.295762367432542 0.0345954360706621 -2.24796637849458 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/6.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rocker1-6" type="revolute">
+      <parent>rocker1</parent>
+      <child>6</child>
+      <pose>2.22044604925031E-16 -9.46985711305914E-08 -1.64010659720049E-07 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="W9">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.155663631744023 0.125676422595489 0.0918241330060651 -1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.060861542237092</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301844E-05</ixx>
+          <ixy>1.66338032994328E-11</ixy>
+          <ixz>1.56658336471032E-11</ixz>
+          <iyy>3.32741629781163E-05</iyy>
+          <iyz>8.99931742850016E-11</iyz>
+          <izz>3.3274238663481E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="W9_collision">
+        <pose>0.025145799584136 0.0416176884642315 -2.00136473053493 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/W9_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="W9_visual">
+        <pose>0.025145799584136 0.0416176884642315 -2.00136473053493 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/W9.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="b-W9" type="revolute">
+      <parent>b</parent>
+      <child>W9</child>
+      <pose>3.12250225675825E-17 -1.15422100786799E-07 -1.50150107014468E-07 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="W1">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.156211605625439 -0.128940145252918 0.0908958936113698 -1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0608615422370927</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301844E-05</ixx>
+          <ixy>9.36432820620049E-12</ixy>
+          <ixz>2.08425314397582E-11</ixz>
+          <iyy>3.327411039804E-05</iyy>
+          <iyz>3.68044121993085E-11</iyz>
+          <izz>3.32742912435574E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="W1_collision">
+        <pose>0.279762367432542 0.0406894490695362 -2.00081675665352 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/W1_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="W1_visual">
+        <pose>0.279762367432542 0.0406894490695362 -2.00081675665352 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/W1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="b-W1" type="revolute">
+      <parent>b</parent>
+      <child>W1</child>
+      <pose>2.77555756156289E-16 4.91037790845139E-08 -1.82910182111584E-07 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="W8">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>-0.0924736815065925 0.141676422595489 0.0831085406815657 -1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0608615422370924</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301842E-05</ixx>
+          <ixy>1.93504024027956E-11</ixy>
+          <ixz>1.21516946315306E-11</ixz>
+          <iyy>3.32741999752062E-05</iyy>
+          <iyz>9.76223591252615E-11</iyz>
+          <izz>3.32742016663912E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="W8_collision">
+        <pose>0.00914579958413583 0.032902096139732 -2.24950204378555 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/W8_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="W8_visual">
+        <pose>0.00914579958413583 0.032902096139732 -2.24950204378555 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/W8.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rocker2-W8" type="revolute">
+      <parent>rocker2</parent>
+      <child>W8</child>
+      <pose>1.73472347597681E-18 -1.42290941695933E-07 -1.24982413751695E-07 0 0 0</pose>
+      <axis>
+        <xyz>1 9.9127055770103E-16 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+    <link name="W7">
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <pose>0.00739766536740794 0.141676422595489 0.0881809410057307 -1.5707963267949 0 1.5707963267949</pose>
+      <must_be_base_link>0</must_be_base_link>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <inertial>
+        <mass>0.0608615422370905</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>6.09504641301836E-05</ixx>
+          <ixy>1.9920416416641E-11</ixy>
+          <ixz>1.11927997966342E-11</ixz>
+          <iyy>3.3274283229995E-05</iyy>
+          <iyz>5.2340847733763E-11</iyz>
+          <izz>3.32741184116015E-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="W7_collision">
+        <pose>0.00914579958413601 0.037974496463897 -2.14963069691155 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/W7_col.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="W7_visual">
+        <pose>0.00914579958413601 0.037974496463897 -2.14963069691155 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Swarm_rocker_bogie/meshes/W7.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rocker2-W7" type="revolute">
+      <parent>rocker2</parent>
+      <child>W7</child>
+      <pose>0 1.77779226562258E-07 -6.52829412750577E-08 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+          <effort>1</effort>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+</sdf>
